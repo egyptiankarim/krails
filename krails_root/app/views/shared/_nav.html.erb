@@ -1,0 +1,27 @@
+<!-- Fixed navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to("#{Rails.application.config.app_name}", root_path(), { class: "navbar-brand" }) %>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="<%= is_active('some_link') %>"><%= link_to("[some link]", root_path()) %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="<%= is_active('about') %>">
+          <%= link_to("About", about_path()) %>
+        </li>
+        <li>
+          <a href="#" title="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>

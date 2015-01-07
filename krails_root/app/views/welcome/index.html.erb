@@ -1,0 +1,12 @@
+<%- view_title "Welcome!" %>
+
+<% content_for :main do %>
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="page-header">Welcome to <%= "#{Rails.application.config.app_name}" %>!</h1>
+    <p class="lead">Hi! Hello. How are you?</p>
+    <p>This system [does some stuff].</p>
+    <%= render "shared/lorem" %>
+  </div>
+</div>
+<% end %>
