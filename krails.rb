@@ -22,16 +22,9 @@ def source_paths
 end
 
 inside 'config' do
-  remove_file 'deploy.rb'
-  copy_file 'deploy.rb'
-
   inside 'initializers' do
     remove_file 'assets.rb'
     copy_file 'assets.rb'
-  end
-  inside 'deploy' do
-    remove_file 'staging.rb'
-    copy_file 'staging.rb'
   end
 end
 
