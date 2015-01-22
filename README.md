@@ -1,12 +1,10 @@
-# .krails
+# krails
 My simple template for Ruby on Rails projects.
 
 ## Usage
-
 $ rails new [app_name] -m .krails/krails.rb
 
 ## Notes
-
 This template does the following:
 
 - Generate Capistrano files and paths,
