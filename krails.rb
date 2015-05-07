@@ -12,7 +12,7 @@ generate(:controller, "about index")
 route "get 'about', to: 'about#index', as: :about"
 
 rake "db:migrate"
-rake "routes" 
+rake "routes"
 
 run "cap install"
 
@@ -36,7 +36,9 @@ inside 'vendor' do
       copy_file 'glyphicons-halflings-regular.svg'
       copy_file 'glyphicons-halflings-regular.woff'
     end
-    inside 'images' do 
+    inside 'images' do
+      copy_file 'domo.png'
+      copy_file 'octocat.png'
     end
     inside 'javascripts' do
       copy_file 'bootstrap.js'
@@ -53,10 +55,6 @@ end
 
 inside 'lib' do
   inside 'assets' do
-    inside 'images' do
-      copy_file 'Domo.png'
-      copy_file 'Octocat.png'
-    end
     inside 'stylesheets' do
       copy_file 'bootstrap-fonts-correct.scss'
       copy_file 'images.css'
@@ -95,9 +93,9 @@ inside 'app' do
       copy_file 'dashboard.html.erb'
     end
     inside 'shared' do
-      copy_file '_foot.html.erb' 
-      copy_file '_head.html.erb'  
-      copy_file '_lorem.html.erb'  
+      copy_file '_foot.html.erb'
+      copy_file '_head.html.erb'
+      copy_file '_lorem.html.erb'
       copy_file '_nav.html.erb'
       copy_file '_short_lorem.html.erb'
     end
