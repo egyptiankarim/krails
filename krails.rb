@@ -3,6 +3,7 @@ application "config.app_name = \"#{ARGV[1]}\""
 
 gem_group :production, :staging do
   gem 'mysql2'
+  gem 'pg'
 end
 
 generate(:controller, "welcome index")
@@ -39,6 +40,7 @@ inside 'vendor' do
     inside 'images' do
       copy_file 'domo.png'
       copy_file 'octocat.png'
+      copy_file 'tina_belcher.png'
     end
     inside 'javascripts' do
       copy_file 'bootstrap.js'
@@ -110,9 +112,11 @@ inside 'app' do
   end
 end
 
+run "bundle install --path vendor/bundle"
+
 # Setup a repository.
 after_bundle do
   git :init
   git add: "-A ."
-  git commit: "-m 'Initial commit'"
+  git commit: "-m 'Initial commit.'"
 end
