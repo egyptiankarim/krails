@@ -1,11 +1,6 @@
 # Basic setup stuff.
 application "config.app_name = \"#{ARGV[1]}\""
 
-gem_group :production, :staging do
-  gem 'mysql2'
-  gem 'pg'
-end
-
 generate(:controller, "welcome index")
 route "root to: 'welcome#index'"
 
@@ -110,6 +105,11 @@ inside 'app' do
       copy_file 'index.html.erb'
     end
   end
+end
+
+gem_group :production, :staging do
+  gem 'mysql2'
+  gem 'pg'
 end
 
 run "bundle install --path vendor/bundle"
