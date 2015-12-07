@@ -10,4 +10,10 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += ['glyphicons-halflings-regular.*']
+
+# To support controller specific css/js rendering
+Rails.application.config.assets.precompile += ['*.css']
+Rails.application.config.assets.precompile += ['*.js']
+
+# All my lib images
 Rails.application.config.assets.precompile += ['*.png']

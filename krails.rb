@@ -10,12 +10,13 @@ route "get 'about', to: 'about#index', as: :about"
 rake "db:migrate"
 rake "routes"
 
-run "cap install"
-
 # Do all the file copying.
 def source_paths
   [File.join(File.expand_path(File.dirname(__FILE__)),'krails_root')] + Array(super)
 end
+
+remove_file '.gitignore'
+copy_file '.gitignore'
 
 inside 'config' do
   inside 'initializers' do
@@ -112,7 +113,12 @@ gem_group :production, :staging do
   gem 'pg'
 end
 
+gem 'figaro'
+
 run "bundle install --path vendor/bundle"
+
+run "bundle exec figaro install"
+run "bundle exec cap install"
 
 # Setup a repository.
 after_bundle do
