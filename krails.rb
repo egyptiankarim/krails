@@ -7,7 +7,6 @@ route "root to: 'welcome#index'"
 generate(:controller, "about index")
 route "get 'about', to: 'about#index', as: :about"
 
-rake "db:migrate"
 rake "routes"
 
 # Do all the file copying.
@@ -17,6 +16,9 @@ end
 
 remove_file '.gitignore'
 copy_file '.gitignore'
+
+remove_file 'Gemfile'
+copy_file 'Gemfile'
 
 inside 'config' do
   inside 'initializers' do
@@ -108,20 +110,15 @@ inside 'app' do
   end
 end
 
-gem_group :production, :staging do
-  gem 'mysql2'
-  gem 'pg'
-end
-
-gem 'figaro'
-
 run "bundle install --path vendor/bundle"
 
-run "bundle exec figaro install"
-run "bundle exec cap install"
-
-# Setup a repository.
+# Setup some variables, a DB, and a repository.
 after_bundle do
+  run "bundle exec figaro install"
+  run "bundle exec cap install"
+
+  rake "db:migrate"
+
   git :init
   git add: "-A ."
   git commit: "-m 'Initial commit.'"
