@@ -1,11 +1,9 @@
 # Basic setup stuff.
 application "config.app_name = \"#{ARGV[1]}\""
 
-generate(:controller, "welcome index")
-route "root to: 'welcome#index'"
-
-generate(:controller, "about index")
-route "get 'about', to: 'about#index', as: :about"
+generate(:controller, "static index about")
+route "root to: 'static#index'"
+route "get 'about', to: 'static#about', as: :about"
 
 rake "routes"
 
@@ -78,8 +76,8 @@ inside 'app' do
     end
   end
   inside 'controllers' do
-    remove_file 'welcome_controller.rb'
-    copy_file 'welcome_controller.rb'
+    remove_file 'static_controller.rb'
+    copy_file 'static_controller.rb'
   end
   inside 'helpers' do
     remove_file 'application_helper.rb'
@@ -99,13 +97,11 @@ inside 'app' do
       copy_file '_nav.html.erb'
       copy_file '_short_lorem.html.erb'
     end
-    inside 'welcome' do
+    inside 'static' do
       remove_file 'index.html.erb'
       copy_file 'index.html.erb'
-    end
-    inside 'about' do
-      remove_file 'index.html.erb'
-      copy_file 'index.html.erb'
+      remove_file 'about.html.erb'
+      copy_file 'about.html.erb'
     end
   end
 end
@@ -117,7 +113,7 @@ after_bundle do
   run "bundle exec figaro install"
   run "bundle exec cap install"
 
-  rake "db:migrate"
+  #rake "db:migrate"
 
   git :init
   git add: "-A ."
