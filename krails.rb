@@ -100,8 +100,11 @@ inside 'app' do
     inside 'static' do
       remove_file 'index.html.erb'
       copy_file 'index.html.erb'
+<<<<<<< HEAD
     end
     inside 'static' do
+=======
+>>>>>>> a706d6ecdb07c85a27f4d103763c75f369d746d0
       remove_file 'about.html.erb'
       copy_file 'about.html.erb'
     end
@@ -114,6 +117,10 @@ run "bundle exec figaro install"
 
 rake "db:migrate"
 
+<<<<<<< HEAD
+=======
+  #rake "db:migrate"
+>>>>>>> a706d6ecdb07c85a27f4d103763c75f369d746d0
 
 # Setup some variables, a DB, and a repository.
 after_bundle do
