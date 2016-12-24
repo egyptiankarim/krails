@@ -59,6 +59,8 @@ group :production, :staging do
   # gem 'pg'
 end
 
+gem 'puma'
+
 # Manage application environment variables
 gem 'figaro'
 
