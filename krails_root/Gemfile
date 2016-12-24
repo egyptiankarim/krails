@@ -19,7 +19,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-#gem 'turbolinks'
+# gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
@@ -40,7 +40,8 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console'
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the
+  # background. Read more: https://github.com/rails/spring
   gem 'spring'
 
   # Needed for Rails 5.0.0.1.
@@ -48,13 +49,14 @@ group :development do
 end
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger
+  # console
   gem 'byebug'
 end
 
 group :production, :staging do
   gem 'mysql2'
-  gem 'pg'
+  # gem 'pg'
 end
 
 # Manage application environment variables
