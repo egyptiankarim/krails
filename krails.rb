@@ -36,9 +36,7 @@ inside 'vendor' do
       copy_file 'glyphicons-halflings-regular.woff'
     end
     inside 'images' do
-      copy_file 'domo.png'
       copy_file 'octocat.png'
-      copy_file 'tina_belcher.png'
     end
     inside 'javascripts' do
       copy_file 'bootstrap.js'
