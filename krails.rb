@@ -1,15 +1,17 @@
 # Basic setup stuff.
 application "config.app_name = \"#{ARGV[1]}\""
 
-generate(:controller, "static index about")
-route "root to: 'static#index'"
-route "get 'about', to: 'static#about', as: :about"
+generate(:controller, 'static index about')
+route 'root to: "static#index"'
+route 'get "about", to: "static#about", as: :about'
 
-rake "routes"
+rake 'routes'
 
 # Do all the file copying.
 def source_paths
-  [File.join(File.expand_path(File.dirname(__FILE__)),'krails_root')] + Array(super)
+  [File.join(
+    File.expand_path(File.dirname(__FILE__)), 'krails_root'
+  )] + Array(super)
 end
 
 remove_file '.gitignore'
@@ -75,14 +77,23 @@ inside 'app' do
       copy_file 'application.css'
     end
   end
+end
+
+inside 'app' do
   inside 'controllers' do
     remove_file 'static_controller.rb'
     copy_file 'static_controller.rb'
   end
+end
+
+inside 'app' do
   inside 'helpers' do
     remove_file 'application_helper.rb'
     copy_file 'application_helper.rb'
   end
+end
+
+inside 'app' do
   inside 'views' do
     inside 'layouts' do
       remove_file 'application.html.erb'
@@ -100,31 +111,24 @@ inside 'app' do
     inside 'static' do
       remove_file 'index.html.erb'
       copy_file 'index.html.erb'
-<<<<<<< HEAD
     end
     inside 'static' do
-=======
->>>>>>> a706d6ecdb07c85a27f4d103763c75f369d746d0
       remove_file 'about.html.erb'
       copy_file 'about.html.erb'
     end
   end
 end
 
-run "bundle install --path vendor/bundle"
-run "bundle exec figaro install"
-#run "bundle exec cap install"
+run 'bundle install --path vendor/bundle'
+run 'bundle exec figaro install'
 
-rake "db:migrate"
+# run "bundle exec cap install"
 
-<<<<<<< HEAD
-=======
-  #rake "db:migrate"
->>>>>>> a706d6ecdb07c85a27f4d103763c75f369d746d0
+# rake 'db:migrate'
 
 # Setup some variables, a DB, and a repository.
 after_bundle do
   git :init
-  git add: "-A ."
-  git commit: "-m 'Initial commit.'"
+  git add: '-A .'
+  git commit: '-m "Initial commit."'
 end
