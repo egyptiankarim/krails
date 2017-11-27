@@ -96,6 +96,7 @@ inside 'app' do
       copy_file '_head.html.erb'
       copy_file '_lorem.html.erb'
       copy_file '_nav.html.erb'
+      copy_file '_scripts.html.erb'
       copy_file '_short_lorem.html.erb'
     end
     inside 'static' do
