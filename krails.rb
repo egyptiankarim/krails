@@ -49,28 +49,23 @@ end
 
 inside 'app' do
   inside 'assets' do
+    inside 'images' do
+      copy_file 'favicon.ico'
+    end
+    end
     inside 'stylesheets' do
       remove_file 'application.css'
       copy_file 'application.css'
     end
   end
-end
-
-inside 'app' do
   inside 'controllers' do
     remove_file 'static_controller.rb'
     copy_file 'static_controller.rb'
   end
-end
-
-inside 'app' do
   inside 'helpers' do
     remove_file 'application_helper.rb'
     copy_file 'application_helper.rb'
   end
-end
-
-inside 'app' do
   inside 'views' do
     inside 'layouts' do
       remove_file 'application.html.erb'
