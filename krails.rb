@@ -29,16 +29,8 @@ end
 
 inside 'vendor' do
   inside 'assets' do
-    inside 'fonts' do
-    end
     inside 'images' do
       copy_file 'octocat.png'
-    end
-    inside 'javascripts' do
-    end
-    inside 'licenses' do
-    end
-    inside 'stylesheets' do
     end
   end
 end
@@ -58,10 +50,6 @@ end
 
 inside 'app' do
   inside 'assets' do
-    inside 'javascripts' do
-      remove_file 'application.js'
-      copy_file 'application.js'
-    end
     inside 'stylesheets' do
       remove_file 'application.css'
       copy_file 'application.css'
@@ -113,11 +101,7 @@ end
 run 'bundle install --path vendor/bundle'
 run 'bundle exec figaro install'
 
-# run "bundle exec cap install"
-
-# rake 'db:migrate'
-
-# Setup some variables, a DB, and a repository.
+# Set up a repository.
 after_bundle do
   git :init
   git add: '-A .'
