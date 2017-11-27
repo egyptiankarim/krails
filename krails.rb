@@ -52,7 +52,6 @@ inside 'app' do
     inside 'images' do
       copy_file 'favicon.ico'
     end
-    end
     inside 'stylesheets' do
       remove_file 'application.css'
       copy_file 'application.css'
