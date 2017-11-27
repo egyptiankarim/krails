@@ -3,11 +3,9 @@
   <%= render partial: "shared/head" %>
 
   <body>
+    <%= render partial: "shared/nav" %>
 
-    <!-- Wrap all page content here -->
-    <div id="wrap">
-      <%= render partial: "shared/nav" %>
-
+    <main role="main">
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
@@ -19,8 +17,7 @@
       <div class="container">
         <%= yield :main %>
       </div>
-    </div>
-    <!-- Close up the page wrapping. -->
+    </main>
 
     <%= render partial: "shared/foot" %>
 

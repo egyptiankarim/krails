@@ -1,37 +1,26 @@
 <%- view_title "Welcome!" %>
 
 <% content_for :jumbotron do %>
-<div class="row">
-  <div class="col-xs-12">
-    <h1 class="page-header">Welcome to <%= "#{Rails.application.config.app_name}" %>!</h1>
-  </div>
-  <div class="col-xs-8">
-    <p class="lead">Hi! Hello. How are you?</p>
-    <p>This system [does some stuff].</p>
-    <%= render "shared/short_lorem" %>
-  </div>
-  <div class="col-xs-4">
-    <button type="button" class="btn btn-primary btn-lg btn-block">
-      <br/>
-      Start <%= "#{Rails.application.config.app_name}" %>-ing!
-      <br/>
-      <br/>
-    </button>
-  </div>
-</div>
+<h1 class="display-3">Welcome to <%= "#{Rails.application.config.app_name}" %>!</h1>
+<p class="lead">Hi! Hello. How are you?</p>
+<p>This system [does some stuff].</p>
+<%= render "shared/short_lorem" %>
+<p>
+  <button type="button" class="btn btn-outline-primary btn-lg btn-block">
+    Start <%= "#{Rails.application.config.app_name}" %>-ing!
+  </button>
+</p>
 <% end %>
 
 <% content_for :main do %>
+<h2>Dignissim qui</h2>
+<%= render "shared/lorem" %>
 <div class="row">
-  <div class="col-xs-12">
-    <h2>Dignissim qui</h2>
-    <%= render "shared/lorem" %>
-  </div>
-  <div class="col-xs-6">
+  <div class="col">
     <h2>Dolor sit</h2>
     <%= render "shared/lorem" %>
   </div>
-  <div class="col-xs-6">
+  <div class="col">
     <h2>Consectetuer adipiscing</h2>
     <%= render "shared/lorem" %>
   </div>
