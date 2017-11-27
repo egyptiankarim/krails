@@ -38,7 +38,6 @@ end
 inside 'lib' do
   inside 'assets' do
     inside 'stylesheets' do
-      copy_file 'bootstrap-fonts-correct.scss'
       copy_file 'images.css'
       copy_file 'sticky-footer-navbar.css'
       copy_file 'typography.css.scss'
