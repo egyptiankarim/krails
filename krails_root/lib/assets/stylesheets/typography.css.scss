@@ -8,7 +8,7 @@ p{
 }
 
 .navbar-brand{
-  font-family: "Lobster";
+  font-family: "Righteous";
   font-size: 1.50em;
   font-weight: 400;
   font-style: normal;
@@ -16,7 +16,7 @@ p{
 }
 
 .fancy{
-  font-family: "Lobster";
+  font-family: "Righteous";
 }
 
 .giant{
@@ -32,4 +32,8 @@ p{
 
 .popover > .arrow {
   visibility: hidden;
+}
+
+th, td{
+  font-family: "Share Tech Mono";
 }

@@ -30,23 +30,15 @@ end
 inside 'vendor' do
   inside 'assets' do
     inside 'fonts' do
-      copy_file 'glyphicons-halflings-regular.eot'
-      copy_file 'glyphicons-halflings-regular.ttf'
-      copy_file 'glyphicons-halflings-regular.svg'
-      copy_file 'glyphicons-halflings-regular.woff'
     end
     inside 'images' do
       copy_file 'octocat.png'
     end
     inside 'javascripts' do
-      copy_file 'bootstrap.js'
     end
     inside 'licenses' do
-      copy_file 'bootstrap.txt'
     end
     inside 'stylesheets' do
-      copy_file 'bootstrap.css'
-      copy_file 'bootstrap.css.map'
     end
   end
 end
