@@ -90,7 +90,7 @@ inside 'app' do
   end
 end
 
-run 'bundle install --path vendor/bundle'
+run 'bundle'
 run 'bundle exec figaro install'
 
 # Set up a repository.
