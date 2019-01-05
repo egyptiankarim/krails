@@ -70,7 +70,6 @@ inside 'app' do
       remove_file 'application.html.erb'
       copy_file 'application.html.erb'
       copy_file 'jumbotron.html.erb'
-      copy_file 'dashboard.html.erb'
     end
     inside 'shared' do
       copy_file '_foot.html.erb'
