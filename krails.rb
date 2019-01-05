@@ -40,7 +40,7 @@ inside 'lib' do
     inside 'stylesheets' do
       copy_file 'images.css'
       copy_file 'sticky-footer-navbar.css'
-      copy_file 'typography.css.scss'
+      copy_file 'typography.css'
       copy_file 'jumbotron.css'
       copy_file 'dashboard.css'
     end
