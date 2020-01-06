@@ -5,6 +5,9 @@
 
   <title><%= "#{Rails.application.config.app_name}" %><%= content_for?(:title) ?  " | #{content_for(:title)}" : "" %></title>
 
+  <!-- jQuery -->
+  <script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+  
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   
@@ -16,14 +19,13 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
   <!-- Rails Asset Pipeline -->
-  <%= stylesheet_link_tag "application", media: "all" %>
-  <%= stylesheet_link_tag params[:controller] %>
-  <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag params[:controller] %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   <%= favicon_link_tag %>
 
   <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>

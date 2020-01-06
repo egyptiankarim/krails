@@ -27,14 +27,6 @@ inside 'config' do
   end
 end
 
-inside 'vendor' do
-  inside 'assets' do
-    inside 'images' do
-      copy_file 'octocat.png'
-    end
-  end
-end
-
 inside 'lib' do
   inside 'assets' do
     inside 'stylesheets' do
@@ -50,7 +42,13 @@ end
 inside 'app' do
   inside 'assets' do
     inside 'images' do
+      copy_file 'android-chrome-192x192.png'
+      copy_file 'android-chrome-512x512.png'
+      copy_file 'apple-touch-icon.png'
+      copy_file 'favicon-16x16.png'
+      copy_file 'favicon-32x32.png'
       copy_file 'favicon.ico'
+      copy_file 'favicon.md'
     end
     inside 'stylesheets' do
       remove_file 'application.css'
@@ -91,7 +89,6 @@ inside 'app' do
 end
 
 run 'bundle'
-run 'bundle exec figaro install'
 
 # Set up a repository.
 after_bundle do
