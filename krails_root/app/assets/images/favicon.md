@@ -1,1 +1,0 @@
-[Thanks for favicon.io!](https://favicon.io/emoji-favicons/collision/)

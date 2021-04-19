@@ -1,11 +1,9 @@
 # Basic setup stuff.
-application "config.app_name = \"#{ARGV[1]}\""
+application "config.app_name = \"#{ARGV[0]}\""
 
 generate(:controller, 'static index about')
 route 'root to: "static#index"'
 route 'get "about", to: "static#about", as: :about'
-
-rake 'routes'
 
 # Do all the file copying.
 def source_paths
@@ -33,8 +31,6 @@ inside 'lib' do
       copy_file 'images.css'
       copy_file 'sticky-footer-navbar.css'
       copy_file 'typography.css'
-      copy_file 'jumbotron.css'
-      copy_file 'dashboard.css'
     end
   end
 end
@@ -48,7 +44,6 @@ inside 'app' do
       copy_file 'favicon-16x16.png'
       copy_file 'favicon-32x32.png'
       copy_file 'favicon.ico'
-      copy_file 'favicon.md'
     end
     inside 'stylesheets' do
       remove_file 'application.css'
@@ -67,7 +62,6 @@ inside 'app' do
     inside 'layouts' do
       remove_file 'application.html.erb'
       copy_file 'application.html.erb'
-      copy_file 'jumbotron.html.erb'
     end
     inside 'shared' do
       copy_file '_foot.html.erb'
